@@ -3,12 +3,12 @@
 //  Task
 //
 //  Created by Sarankumar on 11/02/18.
-//  Copyright © 2018 Sarankumar. All rights reserved.
+//  Copyright © 2018 Saran. All rights reserved.
 //
 
 import Foundation
+
 class ActivityDataModel: NSObject {
-    
     var title: String? = nil
     var activityList: [Activity]? = []
 

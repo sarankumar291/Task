@@ -3,7 +3,7 @@
 //  Task
 //
 //  Created by Sarankumar on 11/02/18.
-//  Copyright © 2018 Sarankumar. All rights reserved.
+//  Copyright © 2018 Saran. All rights reserved.
 //
 
 import Foundation
@@ -68,13 +68,13 @@ class TaskService {
                 return
             }
             // parse the result as JSON
-            do{
+            do {
                 if let jsonObj = try JSONSerialization.jsonObject(with: dataObj, options: []) as? [String: Any] {
                     completionHandler(isSuccess, jsonObj as AnyObject?, response.error as NSError?)
                 } else {
                     completionHandler(isSuccess, response.result.value as AnyObject?, response.error as NSError?)
                 }
-            } catch{
+            } catch {
                 completionHandler(isSuccess, response.result.value as AnyObject?, response.error as NSError?)
             }
         }
