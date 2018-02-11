@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Router.loadHomeScreen()
+        AppStyleSettings.setup()
+        setupSDWebImage()
         return true
     }
 
@@ -45,3 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    func setupSDWebImage() {
+        SDImageCache.shared().maxMemoryCost = 4 * 2500 // to limit SDWebImage in-memory bytes*pixel. 4 bytes per pixel
+        SDWebImageDownloader.shared().shouldDecompressImages = false
+    }
+}
