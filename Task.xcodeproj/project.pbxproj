@@ -22,6 +22,8 @@
 		96C61C6420308C91007198D7 /* AppStyleSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C61C6020308C91007198D7 /* AppStyleSettings.swift */; };
 		96C61C6720308D6E007198D7 /* UIViewController+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C61C6520308D6D007198D7 /* UIViewController+Helper.swift */; };
 		96C61C6820308D6E007198D7 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C61C6620308D6E007198D7 /* UIColor+Helper.swift */; };
+		96C61C6A20308F0A007198D7 /* ViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C61C6920308F09007198D7 /* ViewController+DataSource.swift */; };
+		96C61C6C20308F2C007198D7 /* ActivityTableVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96C61C6B20308F2C007198D7 /* ActivityTableVIewCell.swift */; };
 		99BC3E2E0D354F128C684FF9 /* Pods_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C289A9DE04F165F9E31FD033 /* Pods_Task.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		96C61C6020308C91007198D7 /* AppStyleSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStyleSettings.swift; sourceTree = "<group>"; };
 		96C61C6520308D6D007198D7 /* UIViewController+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helper.swift"; sourceTree = "<group>"; };
 		96C61C6620308D6E007198D7 /* UIColor+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
+		96C61C6920308F09007198D7 /* ViewController+DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+DataSource.swift"; sourceTree = "<group>"; };
+		96C61C6B20308F2C007198D7 /* ActivityTableVIewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableVIewCell.swift; sourceTree = "<group>"; };
 		C289A9DE04F165F9E31FD033 /* Pods_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67CB1461E9EBA3D1CD9124F /* Pods-Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Task.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Task/Pods-Task.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				96C61C23203084B0007198D7 /* ViewController.swift */,
+				96C61C6920308F09007198D7 /* ViewController+DataSource.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 		96C61C5220308616007198D7 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				96C61C6B20308F2C007198D7 /* ActivityTableVIewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -407,11 +413,13 @@
 			files = (
 				96C61C6720308D6E007198D7 /* UIViewController+Helper.swift in Sources */,
 				96C61C6120308C91007198D7 /* WebServiceUrls.swift in Sources */,
+				96C61C6C20308F2C007198D7 /* ActivityTableVIewCell.swift in Sources */,
 				96C61C5B20308C73007198D7 /* ActivityService.swift in Sources */,
 				96C61C24203084B0007198D7 /* ViewController.swift in Sources */,
 				96C61C5C20308C73007198D7 /* TaskService.swift in Sources */,
 				96C61C5620308650007198D7 /* Router.swift in Sources */,
 				96C61C5820308C54007198D7 /* ActivityDataModel.swift in Sources */,
+				96C61C6A20308F0A007198D7 /* ViewController+DataSource.swift in Sources */,
 				96C61C22203084B0007198D7 /* AppDelegate.swift in Sources */,
 				96C61C6820308D6E007198D7 /* UIColor+Helper.swift in Sources */,
 				96C61C6420308C91007198D7 /* AppStyleSettings.swift in Sources */,
