@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         self.setupView()
     }
     
+    //MARK:- View UI & Activity API added
     private func setupView() {
         self.view.backgroundColor = UIColor.white
         self.showLoader()
@@ -39,13 +40,17 @@ class ViewController: UIViewController {
         })
     }
     
+    //MARK:- TableView & Constraints added
     private func  setupTableView() {
         tableView = UITableView()
-        tableView.register(ActivityTableVIewCell.self, forCellReuseIdentifier: "cell")// register cell name
+        // Register table view cells
+        tableView.register(ActivityTableVIewCell.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         self.view.addSubview(tableView)
+        // Added refresh controller
         self.tableView.addSubview(refreshControl)
         tableView.separatorStyle = .none
+        // Added Constraints
         let safeView = view.safeAreaLayoutGuide
         tableView.translatesAutoresizingMaskIntoConstraints = false
         let leadingConstraint = tableView.leadingAnchor.constraint(equalTo: safeView.leadingAnchor)
@@ -55,9 +60,9 @@ class ViewController: UIViewController {
         view.addConstraints([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
     }
     
+    //MARK:- Refresh tableView method
     @objc func loadActivities() {
         activityDataModel?.getActivityList(completed: {
-            self.hideLoader()
             DispatchQueue.main.async {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()

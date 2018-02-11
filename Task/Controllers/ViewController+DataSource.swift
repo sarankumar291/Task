@@ -20,7 +20,7 @@ extension ViewController: UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return activityDataModel!.activityListCount()
+        return activityDataModel!.activityListCount() // Activity total rows count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ActivityTableVIewCell else {

@@ -27,6 +27,7 @@ class ActivityTableVIewCell: UITableViewCell {
         self.setupView()
     }
     
+    //MARK- Added UI & Constraints
     private func setupView() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,6 +74,7 @@ class ActivityTableVIewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
+    //MARK:- Configure cell
     func configureCell(object activity: Activity?) {
         self.titleLabel.text = activity?.title
         self.descriptionLabel.text = activity?.descriptionText

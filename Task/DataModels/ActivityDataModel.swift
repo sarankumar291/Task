@@ -9,8 +9,8 @@
 import Foundation
 
 class ActivityDataModel: NSObject {
-    var title: String? = nil
-    var activityList: [Activity]? = []
+    var title: String? = nil // Title of the navigation controller
+    var activityList: [Activity]? = [] // Number of Activities
 
     func getActivityList(completed: Done? =  nil) {
         activityList?.removeAll()
