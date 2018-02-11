@@ -30,14 +30,7 @@ class ViewController: UIViewController {
     //MARK:- View UI & Activity API added
     private func setupView() {
         self.view.backgroundColor = UIColor.white
-        self.showLoader()
-        activityDataModel?.getActivityList(completed: {
-            self.hideLoader()
-            DispatchQueue.main.async {
-                self.title = self.activityDataModel?.title
-                self.tableView.reloadData()
-            }
-        })
+        self.loadActivities()
     }
     
     //MARK:- TableView & Constraints added
@@ -62,7 +55,9 @@ class ViewController: UIViewController {
     
     //MARK:- Refresh tableView method
     @objc func loadActivities() {
+        self.showLoader()
         activityDataModel?.getActivityList(completed: {
+            self.hideLoader()
             DispatchQueue.main.async {
                 if self.refreshControl.isRefreshing {
                     self.refreshControl.endRefreshing()
