@@ -9,5 +9,7 @@
 #ifndef WebServiceURLs_h
 #define WebServiceURLs_h
 
+static NSString * const baseURL = @"https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json";
+
 
 #endif /* WebServiceURLs_h */
