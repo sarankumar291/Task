@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+// FrameWorks
+#import <SDWebImage/UIImageView+WebCache.h>
+// Views
+#import "Constants.h"
+#import "Activity.h"
 
 @interface ActivityTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *descriptionLabel;
+@property (nonatomic, strong) UIImageView *displayImageView;
+@property (nonatomic, strong) UIView *bottomLine;
+
+- (void)configureCell:(Activity *)activity;
 @end
