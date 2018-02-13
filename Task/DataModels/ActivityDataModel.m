@@ -29,6 +29,7 @@
 
 //MARK:- Delegate Method of API call
 - (void)getActivityDetails:(NSDictionary *)data {
+    [_activityList removeAllObjects];
     NSArray *dataArray = [data objectForKey:@"rows"];
     for (NSDictionary *subDictionary in dataArray) {
         [_activityList addObject: [self getActivityData: subDictionary]];
