@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+//Constants
+#import "WebServiceURLs.h"
+
+@protocol ServiceDelegate <NSObject>
+
+@required
+
+- (void)getActivityDetails:(NSDictionary *)data;
+
+@end
+
 @interface TaskService : NSObject
+
+@property (nonatomic, weak) id<ServiceDelegate> delegate;
+- (void)getActivity;
 
 @end

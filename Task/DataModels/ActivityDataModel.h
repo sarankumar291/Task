@@ -8,6 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ActivityDataModel : NSObject
+//Models
+#import "Activity.h"
+#import "TaskService.h"
 
+@protocol ActivityDataModelDelegate <NSObject>
+
+@required
+
+- (void)completionHandler:(BOOL)isSuccess;
+
+@end
+
+
+@interface ActivityDataModel : NSObject <ServiceDelegate>
+
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSMutableArray  *activityList;
+@property (nonatomic, weak) id<ActivityDataModelDelegate> delegate;
+- (void)getActivity;
+- (NSInteger )activityListCount;
 @end
