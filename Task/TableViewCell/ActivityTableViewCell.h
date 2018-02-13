@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  ActivityTableViewCell.h
 //  Task
 //
 //  Created by Sarankumar on 12/02/18.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface ActivityTableViewCell : UITableViewCell
 
 @end
-
