@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -15,17 +14,18 @@
 
 @implementation AppDelegate
 
+@synthesize window = _window;
+@synthesize navController = _navController;
+@synthesize rootController = _rootController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Set Background Color of window
-    self.window.backgroundColor = [UIColor whiteColor];
-    self.rootController = [[ViewController alloc] init];
-    self.navController=[[UINavigationController alloc]initWithRootViewController:self.rootController];
-    [self.window addSubview: self.navController.view];
-    [self.window setRootViewController: self.navController];
-    [self.window makeKeyAndVisible];
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _rootController = [[ViewController alloc] init];
+    _navController = [[UINavigationController alloc]initWithRootViewController:_rootController];
+    [_window addSubview: _navController.view];
+    [_window setRootViewController: _navController];
+    [_window makeKeyAndVisible];
     return YES;
 }
 
@@ -55,6 +55,5 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
 
 @end

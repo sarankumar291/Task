@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+// Extensions
+#import "UIColor+Extension.h"
+// Views
+#import "ViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UINavigationControllerDelegate>
-
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UIViewController *rootController;
+@property (strong, nonatomic) ViewController *rootController;
 @property (strong, nonatomic) UINavigationController *navController;
-
 @end
 
