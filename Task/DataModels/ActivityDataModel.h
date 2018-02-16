@@ -21,7 +21,7 @@
 @end
 
 
-@interface ActivityDataModel : NSObject <ServiceDelegate>
+@interface ActivityDataModel : NSObject
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSMutableArray  *activityList;

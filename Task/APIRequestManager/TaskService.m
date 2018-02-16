@@ -9,17 +9,21 @@
 #import "TaskService.h"
 
 @implementation TaskService
-@synthesize delegate = _delegate;
 
-- (void)getActivity {
+- (void)stringWithUrl:(NSURL *)url callback:(void (^)(NSDictionary *returnResponse, BOOL success))callback {
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURLSessionDataTask *dataTask = [session dataTaskWithURL:[NSURL URLWithString: baseURL] completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSString *encodingString = [[NSString alloc] initWithData: data encoding: NSISOLatin1StringEncoding];
-        NSData *encodingData = [encodingString dataUsingEncoding: NSUTF8StringEncoding];
-        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData: encodingData options:NSJSONReadingMutableContainers error: &error];
-        [_delegate getActivityDetails: jsonDict];
+    NSURLSessionDataTask * dataTask = [session dataTaskWithURL: url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            callback(nil, NO);
+        } else {
+            NSString *encodingString = [[NSString alloc] initWithData: data encoding: NSISOLatin1StringEncoding];
+            NSData *encodingData = [encodingString dataUsingEncoding: NSUTF8StringEncoding];
+            NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData: encodingData options:NSJSONReadingMutableContainers error: &error];
+            callback(jsonDict, YES);
+        }
     }];
     [dataTask resume];
 }
+
 
 @end

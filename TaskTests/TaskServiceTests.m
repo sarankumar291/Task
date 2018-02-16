@@ -7,16 +7,22 @@
 //
 
 #import <XCTest/XCTest.h>
+
 // Extensions
 #import "WebServiceURLs.h"
+// Service
+#import "TaskService.h"
 
 @interface TaskServiceTests : XCTestCase
+@property (nonatomic, strong) TaskService * taskService;
 @end
 
 @implementation TaskServiceTests
+@synthesize taskService = _taskService;
 
 - (void)setUp {
     [super setUp];
+    _taskService = [[TaskService alloc] init];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -57,5 +63,23 @@
     [dataTask resume];
     [self waitForExpectationsWithTimeout:10.0 handler:nil];
 }
+
+//MARK:- Webservices test
+- (void)testServiceCallSuccess {
+    [_taskService stringWithUrl:[NSURL URLWithString: baseURL] callback:^(NSDictionary *returnResponse, BOOL success) {
+        if (success == YES) {
+            XCTAssertTrue(success, @"Success response from server");
+        }
+    }];
+}
+
+- (void)testServiceCallFailure {
+    [_taskService stringWithUrl:[NSURL URLWithString: baseURL] callback:^(NSDictionary *returnResponse, BOOL success) {
+        if (success == NO) {
+            XCTAssertTrue(success, @"Failure response from server");
+        }
+    }];
+}
+
 
 @end

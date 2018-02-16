@@ -23,8 +23,13 @@
 //MARK:- Calling API
 - (void)getActivity {
     TaskService *taskService = [[TaskService alloc] init];
-    taskService.delegate = self;
-    [taskService getActivity];
+    [taskService stringWithUrl:[NSURL URLWithString: baseURL] callback:^(NSDictionary *returnResponse, BOOL success) {
+        if (success == YES) {
+            [self getActivityDetails: returnResponse];
+        } else {
+            [_delegate completionHandler: NO];
+        }
+    }];
 }
 
 //MARK:- Delegate Method of API call

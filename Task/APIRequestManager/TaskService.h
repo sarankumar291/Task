@@ -11,17 +11,9 @@
 //Constants
 #import "WebServiceURLs.h"
 
-@protocol ServiceDelegate <NSObject>
-
-@required
-
-- (void)getActivityDetails:(NSDictionary *)data;
-
-@end
-
 @interface TaskService : NSObject
 
-@property (nonatomic, weak) id<ServiceDelegate> delegate;
-- (void)getActivity;
+- (void)stringWithUrl:(NSURL *)url callback:(void (^)(NSDictionary *returnResponse, BOOL success))callback;
+
 
 @end

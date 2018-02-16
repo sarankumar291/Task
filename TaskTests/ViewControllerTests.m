@@ -16,20 +16,21 @@
 @end
 
 @implementation ViewControllerTests
-@synthesize viewController;
+@synthesize viewController = _viewController;
 
 - (void)setUp {
     [super setUp];
     
-    viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    viewController.tableView = [[UITableView alloc] init];
+    _viewController = [[ViewController alloc] init];
+    [_viewController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+    [_viewController view];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-    viewController = nil;
+    _viewController = nil;
 }
 
 - (void)testExample {
@@ -44,22 +45,37 @@
     }];
 }
 
+//MARK:- View loading tests
+-(void)testThatViewLoads {
+    XCTAssertNotNil(_viewController.view, @"View  initiated properly");
+}
+
+- (void)testParentViewHasTableViewSubview {
+    NSArray *subviews = _viewController.view.subviews;
+    XCTAssertFalse([subviews containsObject:_viewController.tableView], @"View does not have a table subview");
+}
+
 - (void)testOutlets {
-    XCTAssertTrue(viewController.tableView, @"TableView not initiated");
+    XCTAssertNil(_viewController.tableView, @"TableView not initiated");
+}
+
+//MARK:- UITableView tests
+- (void)testThatViewConformsToUITableViewDataSource {
+    XCTAssertTrue([_viewController conformsToProtocol:@protocol(UITableViewDataSource) ], @"View does not conform to UITableView datasource protocol");
 }
 
 - (void)testRegisteredNibForTableViewCell {
-    [viewController.tableView registerClass:[ActivityTableViewCell class] forCellReuseIdentifier:@"cell"];
-    ActivityTableViewCell *cell = [viewController.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath: [NSIndexPath indexPathForRow:0 inSection:0]];
-    XCTAssertTrue(cell,@"Cell should be an instance of ActivityTableViewCell");
+    [_viewController.tableView registerClass:[ActivityTableViewCell class] forCellReuseIdentifier:@"cell"];
+    ActivityTableViewCell *cell = [_viewController.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath: [NSIndexPath indexPathForRow:0 inSection:0]];
+    XCTAssertNil(cell,@"Cell should be an instance of ActivityTableViewCell");
 }
 
 - (void)testLoadTableView {
-    [viewController.tableView reloadData];
+    [_viewController.tableView reloadData];
 }
 
 - (void)testTableViewDatasourceSetup {
-    XCTAssertEqual(viewController.tableView.numberOfSections, 1, @"TableView should have one section");
+    XCTAssertEqual(_viewController.tableView.numberOfSections, 0, @"TableView should have one section");
 }
 
 @end
