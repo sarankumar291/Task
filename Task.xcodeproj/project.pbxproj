@@ -21,16 +21,14 @@
 		963C4AB62032708A00AF19F7 /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AB52032708A00AF19F7 /* TaskService.m */; };
 		963C4AB72032950000AF19F7 /* TaskService.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AB52032708A00AF19F7 /* TaskService.m */; };
 		963C4AB92032ABC400AF19F7 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AB82032ABC400AF19F7 /* ViewControllerTests.m */; };
-		963C4ABA2032AF5C00AF19F7 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E6DF62031FDAC00C6CFA2 /* ActivityTableViewCell.m */; };
 		963C4ABB2032AF5D00AF19F7 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E6DF62031FDAC00C6CFA2 /* ActivityTableViewCell.m */; };
 		963C4ABC2032AF7300AF19F7 /* ActivityDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AAF20326E5400AF19F7 /* ActivityDataModel.m */; };
-		963C4ABD2032AF7300AF19F7 /* ActivityDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AAF20326E5400AF19F7 /* ActivityDataModel.m */; };
 		963C4ABE2032AF7600AF19F7 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AB220326E7B00AF19F7 /* Activity.m */; };
-		963C4ABF2032AF7700AF19F7 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AB220326E7B00AF19F7 /* Activity.m */; };
-		963C4AC02032AF7E00AF19F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E6D7D2031DF6200C6CFA2 /* AppDelegate.m */; };
-		963C4AC12032AF7F00AF19F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E6D7D2031DF6200C6CFA2 /* AppDelegate.m */; };
 		963C4AC32032BA0E00AF19F7 /* TaskServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 963C4AC22032BA0E00AF19F7 /* TaskServiceTests.m */; };
 		96BCDF642032DFF600CAD068 /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BCDF632032DFF600CAD068 /* UIColor+Extension.m */; };
+		96CD9A8A20372711007A6A0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 960E6D802031DF6200C6CFA2 /* ViewController.m */; };
+		96CD9A8C2037288D007A6A0D /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 96BCDF632032DFF600CAD068 /* UIColor+Extension.m */; };
+		96CD9A8D20372897007A6A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 960E6D852031DF6200C6CFA2 /* Assets.xcassets */; };
 		C4FC62B51767B7459C8470BE /* Pods_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE7EBDCA23497B3071A90EE /* Pods_Task.framework */; };
 /* End PBXBuildFile section */
 
@@ -389,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CD9A8D20372897007A6A0D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,14 +558,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96CD9A8A20372711007A6A0D /* ViewController.m in Sources */,
 				963C4AB92032ABC400AF19F7 /* ViewControllerTests.m in Sources */,
 				963C4AB72032950000AF19F7 /* TaskService.m in Sources */,
 				963C4ABB2032AF5D00AF19F7 /* ActivityTableViewCell.m in Sources */,
+				96CD9A8C2037288D007A6A0D /* UIColor+Extension.m in Sources */,
 				963C4ABC2032AF7300AF19F7 /* ActivityDataModel.m in Sources */,
 				963C4AC32032BA0E00AF19F7 /* TaskServiceTests.m in Sources */,
 				963C4ABE2032AF7600AF19F7 /* Activity.m in Sources */,
 				960E6D962031DF6200C6CFA2 /* TaskTests.m in Sources */,
-				963C4AC02032AF7E00AF19F7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,11 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				963C4ABA2032AF5C00AF19F7 /* ActivityTableViewCell.m in Sources */,
 				960E6DA12031DF6200C6CFA2 /* TaskUITests.m in Sources */,
-				963C4ABF2032AF7700AF19F7 /* Activity.m in Sources */,
-				963C4ABD2032AF7300AF19F7 /* ActivityDataModel.m in Sources */,
-				963C4AC12032AF7F00AF19F7 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@ pod 'MBProgressHUD', '~> 1.1.0'
 target 'TaskTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SDWebImage'
+    pod 'MBProgressHUD', '~> 1.1.0'
 end
 
 target 'TaskUITests' do
